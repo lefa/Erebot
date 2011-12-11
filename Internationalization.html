@@ -1,0 +1,212 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Internationalization &mdash; Erebot v0.6.0 documentation</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.6.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Erebot v0.6.0 documentation"
+          href="_static/opensearch.xml"/>
+    <link rel="top" title="Erebot v0.6.0 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="index.html">Erebot v0.6.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="internationalization">
+<h1><a class="toc-backref" href="#id3">Internationalization</a><a class="headerlink" href="#internationalization" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#internationalization" id="id3">Internationalization</a><ul>
+<li><a class="reference internal" href="#a-practical-example" id="id4">A practical example</a></li>
+<li><a class="reference internal" href="#managing-translations" id="id5">Managing translations</a><ul>
+<li><a class="reference internal" href="#extracting-strings-marked-for-translation" id="id6">Extracting strings marked for translation</a></li>
+<li><a class="reference internal" href="#adding-translations-for-a-new-locale" id="id7">Adding translations for a new locale</a></li>
+<li><a class="reference internal" href="#updating-existing-catalogs" id="id8">Updating existing catalogs</a></li>
+<li><a class="reference internal" href="#compiling-the-catalogs" id="id9">Compiling the catalogs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#plurals" id="id10">Plurals</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="a-practical-example">
+<h2><a class="toc-backref" href="#id4">A practical example</a><a class="headerlink" href="#a-practical-example" title="Permalink to this headline">¶</a></h2>
+<p>Supporting I18N in your module is very simple. All you need is an instance
+of a translator (an instance of an object that implements
+<a class="reference external" href="https://buildbot.erebot.net/doc/html/Erebot/interfaceErebot__Interface__I18n.html">Erebot_Interface_I18n</a>) for the module.
+A translator for the module is automatically created along instances of your
+module.</p>
+<p>Once equipped with a translator, just call its <tt class="docutils literal"><span class="pre">gettext()</span></tt> method, passing
+the string to translate to it.
+Therefore, translating a string is as simple as the following snippet:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+    <span class="nv">$translator</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTranslator</span><span class="p">(</span><span class="nv">$chan</span><span class="p">);</span>
+    <span class="nv">$translator</span><span class="o">-&gt;</span><span class="na">gettext</span><span class="p">(</span><span class="s1">&#39;This text will be translated&#39;</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<p>Module developpers may also be interested in the other methods provided by
+the translator object, presented in the <a class="reference external" href="https://buildbot.erebot.net/doc/html/Erebot/interfaceErebot__Interface__I18n.html">API documentation</a> for that class.</p>
+</div>
+<div class="section" id="managing-translations">
+<h2><a class="toc-backref" href="#id5">Managing translations</a><a class="headerlink" href="#managing-translations" title="Permalink to this headline">¶</a></h2>
+<p>In the previous section, we saw how to integrate strings that will be
+translated. So... how does Erebot finds out the correct translation?</p>
+<p>There is another special file in <tt class="docutils literal"><span class="pre">data/i18n/&lt;module&gt;.po</span></tt> where <tt class="docutils literal"><span class="pre">&lt;module&gt;</span></tt>
+is the name of your module (eg. <tt class="docutils literal"><span class="pre">Erebot_Module_XYZ</span></tt>).
+This file uses the <a class="reference external" href="http://www.gnu.org/s/gettext/">gettext</a> format and lists all messages marked as requiring
+a translation (as extracted from your source code when running <tt class="docutils literal"><span class="pre">phing</span> <span class="pre">i18n</span></tt>).</p>
+<p>Also, every Erebot module contains a set of translations in
+<tt class="docutils literal"><span class="pre">data/i18n/&lt;locale&gt;/LC_MESSAGES/&lt;module&gt;.po</span></tt>, where <tt class="docutils literal"><span class="pre">&lt;locale&gt;</span></tt> is some
+locale identifier, expressed using the following format: <tt class="docutils literal"><span class="pre">xx_YY</span></tt>
+(where <tt class="docutils literal"><span class="pre">xx</span></tt> is the ISO 639-1 code for the language <a class="footnote-reference" href="#id2" id="id1">[1]</a> and <tt class="docutils literal"><span class="pre">yy</span></tt> is the
+code for the country, eg. <tt class="docutils literal"><span class="pre">en_US</span></tt>) and <tt class="docutils literal"><span class="pre">&lt;module&gt;</span></tt> is the name of your
+module (eg. <tt class="docutils literal"><span class="pre">Erebot_Module_XYZ</span></tt>).
+Those files use the same format as the previous file and provide the
+translations for the messages listed in <tt class="docutils literal"><span class="pre">data/i18n/&lt;module&gt;.po</span></tt>.</p>
+<p>To ease management of the translations, and especially the PO files (also
+called &#8220;catalogs&#8221;), a few tools are provided by Erebot as <a class="reference external" href="http://phing.info/">phing</a> targets.
+These tools are discussed below.</p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>See <a class="reference external" href="http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes</a></td></tr>
+</tbody>
+</table>
+<div class="section" id="extracting-strings-marked-for-translation">
+<h3><a class="toc-backref" href="#id6">Extracting strings marked for translation</a><a class="headerlink" href="#extracting-strings-marked-for-translation" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">extract_messages</span></tt> target can be used to parse the code of your module
+and extract strings marked for translation. This will write out every string
+marked for translation into <tt class="docutils literal"><span class="pre">data/i18n/&lt;module&gt;.po</span></tt>.
+Example:</p>
+<div class="highlight-python"><pre>phing extract_messages</pre>
+</div>
+</div>
+<div class="section" id="adding-translations-for-a-new-locale">
+<h3><a class="toc-backref" href="#id7">Adding translations for a new locale</a><a class="headerlink" href="#adding-translations-for-a-new-locale" title="Permalink to this headline">¶</a></h3>
+<p>Translations for a new locale can be added by using the <tt class="docutils literal"><span class="pre">init_catalog</span></tt>
+target and passing a <tt class="docutils literal"><span class="pre">locale</span></tt> parameter, like so:</p>
+<div class="highlight-python"><pre>phing init_catalog -Dlocale=de_DE</pre>
+</div>
+</div>
+<div class="section" id="updating-existing-catalogs">
+<h3><a class="toc-backref" href="#id8">Updating existing catalogs</a><a class="headerlink" href="#updating-existing-catalogs" title="Permalink to this headline">¶</a></h3>
+<p>Updating the catalogs is quite simple, just use the <tt class="docutils literal"><span class="pre">update_catalog</span></tt> target:</p>
+<div class="highlight-python"><pre>phing update_catalog</pre>
+</div>
+</div>
+<div class="section" id="compiling-the-catalogs">
+<h3><a class="toc-backref" href="#id9">Compiling the catalogs</a><a class="headerlink" href="#compiling-the-catalogs" title="Permalink to this headline">¶</a></h3>
+<p>Last but not least, the catalog files cannot be used directly by the bot.
+You first need to compile them using the <tt class="docutils literal"><span class="pre">compile_catalog</span></tt> phing target:</p>
+<div class="highlight-python"><pre>phing compile_catalog</pre>
+</div>
+<p>This will generate MO files for the miscellaneous PO files described above.</p>
+</div>
+</div>
+<div class="section" id="plurals">
+<h2><a class="toc-backref" href="#id10">Plurals</a><a class="headerlink" href="#plurals" title="Permalink to this headline">¶</a></h2>
+<p>Correct pluralization of sentences is a big challenge when dealing with i18n.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Even though the <a class="reference external" href="http://www.gnu.org/s/gettext/">gettext</a> family of tools has some (incomplete, at least
+from my point of view) support for plurals, the original feature from
+<a class="reference external" href="http://www.gnu.org/s/gettext/">gettext</a> is not used by Erebot.</p>
+</div>
+<p>Erebot handles plurals in an elegant way, using a special set of markup in
+the <a class="reference external" href="https://buildbot.erebot.net/doc/html/Erebot/interfaceErebot__Interface__Styling.html">styling API</a>. Readers may be interested in the documentation on
+<a class="reference external" href="https://github.com/fpoirotte/Erebot/wiki/Styling">styling</a> for more information on plurals support.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Internationalization</a><ul>
+<li><a class="reference internal" href="#a-practical-example">A practical example</a></li>
+<li><a class="reference internal" href="#managing-translations">Managing translations</a><ul>
+<li><a class="reference internal" href="#extracting-strings-marked-for-translation">Extracting strings marked for translation</a></li>
+<li><a class="reference internal" href="#adding-translations-for-a-new-locale">Adding translations for a new locale</a></li>
+<li><a class="reference internal" href="#updating-existing-catalogs">Updating existing catalogs</a></li>
+<li><a class="reference internal" href="#compiling-the-catalogs">Compiling the catalogs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#plurals">Plurals</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/Internationalization.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="index.html">Erebot v0.6.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, François Poirotte.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

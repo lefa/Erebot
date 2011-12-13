@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Prerequisites &mdash; Erebot v0.5.1.g725dc0ce2cb5b4fa6d6f1f2f7c5b32dc80b5d756 documentation</title>
+    <title>Prerequisites &mdash; Erebot v0.5.1.g45c1ba0fd21af690cf95a911fea73deaec95d37e documentation</title>
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.5.1.g725dc0ce2cb5b4fa6d6f1f2f7c5b32dc80b5d756',
+        VERSION:     '0.5.1.g45c1ba0fd21af690cf95a911fea73deaec95d37e',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -22,15 +22,23 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Erebot v0.5.1.g725dc0ce2cb5b4fa6d6f1f2f7c5b32dc80b5d756 documentation"
+          title="Search within Erebot v0.5.1.g45c1ba0fd21af690cf95a911fea73deaec95d37e documentation"
           href="_static/opensearch.xml"/>
-    <link rel="top" title="Erebot v0.5.1.g725dc0ce2cb5b4fa6d6f1f2f7c5b32dc80b5d756 documentation" href="index.html" /> 
+    <link rel="top" title="Erebot v0.5.1.g45c1ba0fd21af690cf95a911fea73deaec95d37e documentation" href="index.html" />
+    <link rel="next" title="Compatible modules" href="Modules.html" />
+    <link rel="prev" title="Welcome to Erebot’s documentation!" href="index.html" /> 
   </head>
   <body>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
-        <li><a href="index.html">Erebot v0.5.1.g725dc0ce2cb5b4fa6d6f1f2f7c5b32dc80b5d756 documentation</a> &raquo;</li> 
+        <li class="right" style="margin-right: 10px">
+          <a href="Modules.html" title="Compatible modules"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Erebot’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Erebot v0.5.1.g45c1ba0fd21af690cf95a911fea73deaec95d37e documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -97,7 +105,7 @@ usually by issuing one of these commands, followed by the name of the package
 which contains the dependency:</p>
 <ul>
 <li><p class="first">For apt-based distributions (eg. Debian, Ubuntu):</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># apt install &lt;package&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># apt-get install &lt;package&gt;</span>
 </pre></div>
 </div>
 </li>
@@ -148,7 +156,7 @@ the <tt class="docutils literal"><span class="pre">xgettext</span></tt> command-
 program used to extract messages
 marked for translation.
 <strong>Note</strong>: this is <strong>NOT</strong> the
-same as the <tt class="docutils literal"><span class="pre">gettext</span></tt> PHP
+same as the PHP <tt class="docutils literal"><span class="pre">gettext</span></tt>
 extension.</td>
 </tr>
 <tr><td>doxygen</td>
@@ -247,10 +255,12 @@ There are currently two of them:</p>
 The simplest way to <a class="reference external" href="http://pear.php.net/manual/en/installation.php">install pear</a> is to grab a copy of
 <a class="reference external" href="http://pear.php.net/go-pear.phar">go-pear.phar</a> and run this command
 from a shell:</p>
-<div class="highlight-python"><pre>php go-pear.phar</pre>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># php go-pear.phar</span>
+</pre></div>
 </div>
 <p>Then, to install a dependency using <a class="reference external" href="http://pear.php.net/package/PEAR">pear</a>, run the following command:</p>
-<div class="last highlight-python"><pre>pear install &lt;dependency&gt;</pre>
+<div class="last highlight-python"><div class="highlight"><pre><span class="c"># pear install &lt;dependency&gt;</span>
+</pre></div>
 </div>
 </dd>
 <dt><a class="reference external" href="http://pyrus.net/">Pyrus</a></dt>
@@ -262,7 +272,8 @@ over the older PEAR Installer.
 The latest version can be downloaded from
 <a class="reference external" href="http://pear2.php.net/pyrus.phar">this link</a>.</p>
 <p>To install a dependency using <a class="reference external" href="http://pyrus.net/">Pyrus</a>, run the following command:</p>
-<div class="last highlight-python"><pre>php pyrus.phar install &lt;dependency&gt;</pre>
+<div class="last highlight-python"><div class="highlight"><pre><span class="c"># php pyrus.phar install &lt;dependency&gt;</span>
+</pre></div>
 </div>
 </dd>
 </dl>
@@ -685,6 +696,12 @@ which should <strong>ALWAYS</strong> be called before submitting a patch.</td></
 </li>
 </ul>
 
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to Erebot&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Modules.html"
+                        title="next chapter">Compatible modules</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -705,7 +722,13 @@ which should <strong>ALWAYS</strong> be called before submitting a patch.</td></
     <div class="related">
       <h3>Navigation</h3>
       <ul>
-        <li><a href="index.html">Erebot v0.5.1.g725dc0ce2cb5b4fa6d6f1f2f7c5b32dc80b5d756 documentation</a> &raquo;</li> 
+        <li class="right" style="margin-right: 10px">
+          <a href="Modules.html" title="Compatible modules"
+             >next</a></li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Erebot’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">Erebot v0.5.1.g45c1ba0fd21af690cf95a911fea73deaec95d37e documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

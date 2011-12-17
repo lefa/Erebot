@@ -1,0 +1,293 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installation &mdash; Erebot v0.5.1.snapshot14 documentation</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.5.1.snapshot14',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Erebot v0.5.1.snapshot14 documentation"
+          href="_static/opensearch.xml"/>
+    <link rel="top" title="Erebot v0.5.1.snapshot14 documentation" href="index.html" />
+    <link rel="next" title="Compatible modules" href="Modules.html" />
+    <link rel="prev" title="Prerequisites" href="Prerequisites.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="Modules.html" title="Compatible modules"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="Prerequisites.html" title="Prerequisites"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Erebot v0.5.1.snapshot14 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="installation">
+<h1><a class="toc-backref" href="#id1">Installation</a><a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>This pages contains instructions on how to install Erebot on your machine.
+There are several ways to achieve that. Each method is described below.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">You cannot mix the different methods. Especially, <strong>you must use the same
+method to install modules as the one you selected for Erebot itself</strong>.</p>
+</div>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#installation" id="id1">Installation</a><ul>
+<li><a class="reference internal" href="#installation-from-erebot-s-pear-channel" id="id2">Installation from Erebot&#8217;s PEAR channel</a></li>
+<li><a class="reference internal" href="#installation-using-phar-archives" id="id3">Installation using PHAR archives</a></li>
+<li><a class="reference internal" href="#installation-from-source" id="id4">Installation from source</a></li>
+<li><a class="reference internal" href="#final-steps" id="id5">Final steps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We recommend that you install Erebot using its <a class="reference external" href="https://pear.erebot.net/">PEAR channel</a>.
+This will result in a system-wide installation which can be upgraded
+very easily later.
+If this is not feasible for you or if you prefer to keep the installation
+local (for a single user), we recommend that you go the PHAR way.
+Installation from sources is reserved for advanced installations (mainly
+for Erebot&#8217;s developers).</p>
+</div>
+<div class="section" id="installation-from-erebot-s-pear-channel">
+<h2><a class="toc-backref" href="#id2">Installation from Erebot&#8217;s PEAR channel</a><a class="headerlink" href="#installation-from-erebot-s-pear-channel" title="Permalink to this headline">¶</a></h2>
+<p>This is by far the simplest way to install Erebot.
+Hence, it&#8217;s the recommended way for beginners.
+Just use whatever tool your distribution provides to manage PEAR packages:</p>
+<ul class="simple">
+<li>Either <a class="reference external" href="http://pear.php.net/package/PEAR">pear</a> (traditionnal tool)</li>
+<li>or <a class="reference external" href="http://pyrus.net/">pyrus</a> (new experimental tool meant to replace pear someday)</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Pyrus currently has issues to install some PEAR packages.
+See <a class="reference external" href="https://github.com/pyrus/Pyrus/issues/26">https://github.com/pyrus/Pyrus/issues/26</a> for more information.</p>
+</div>
+<p>You can install either the latest stable release using a command such as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># pear channel-discover pear.erebot.net</span>
+<span class="c"># pear install erebot/Erebot</span>
+</pre></div>
+</div>
+<p>... or you can install the latest unstable version instead, using:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># pear channel-discover pear.erebot.net</span>
+<span class="c"># pear install erebot/Erebot-alpha</span>
+</pre></div>
+</div>
+<p>Please note that the <tt class="docutils literal"><span class="pre">channel-discover</span></tt> command needs to be run only once
+(pear and pyrus will refuse to discover a PEAR channel more than once anyway).
+To use Pyrus to manage PEAR packages instead of the regular Pear tool,
+just replace <tt class="docutils literal"><span class="pre">pear</span></tt> with <tt class="docutils literal"><span class="pre">pyrus</span></tt> in the commands above.</p>
+<p>That&#8217;s all! The bot is now ready for the next steps.
+Be sure to read the section on <a class="reference internal" href="#final-steps">final steps</a> for a summary of what to do next.</p>
+</div>
+<div class="section" id="installation-using-phar-archives">
+<h2><a class="toc-backref" href="#id3">Installation using PHAR archives</a><a class="headerlink" href="#installation-using-phar-archives" title="Permalink to this headline">¶</a></h2>
+<p>When installing Erebot using a PHAR archive, a copy of all dependencies needed
+by Erebot is bundled in the archive. Hence, the PHAR archive is slightly bigger
+than a regular PEAR package, but overall the disk space requirements are the
+same as for an installation using PEAR because you would have had to install
+those dependencies as well anyway.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Actually, not all dependencies are bundled with Erebot.
+Especially, the PHAR archive does not contain any module.
+Thus, to get a working installation, you must install additional Erebot
+modules. At a minimum, this includes: <a class="reference external" href="/Erebot_Module_IrcConnector/">Erebot_Module_IrcConnector</a>,
+<a class="reference external" href="/Erebot_Module_AutoConnect/">Erebot_Module_AutoConnect</a>, <a class="reference external" href="/Erebot_Module_PingReply/">Erebot_Module_PingReply</a>.</p>
+</div>
+<p>Be sure to read the section on <a class="reference internal" href="#final-steps">final steps</a> for a summary of what to do next.</p>
+</div>
+<div class="section" id="installation-from-source">
+<h2><a class="toc-backref" href="#id4">Installation from source</a><a class="headerlink" href="#installation-from-source" title="Permalink to this headline">¶</a></h2>
+<p>First, make sure a git client is installed on your machine:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># apt-get install git   # for apt-based distributions such as Debian or Ubuntu</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># yum install git       # for yum-based distributions such as Fedora / RHEL (RedHat)</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># urpmi git             # for urpmi-based distributions such as SLES (SuSE) or MES (Mandriva)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Windows users may be interested in installing <a class="reference external" href="http://code.google.com/p/msysgit/downloads/list">Git for Windows</a> to get
+an equivalent git client. Also, make sure that <tt class="docutils literal"><span class="pre">git.exe</span></tt> is present
+on your account&#8217;s <tt class="docutils literal"><span class="pre">PATH</span></tt>. If not, you&#8217;ll have to replace <tt class="docutils literal"><span class="pre">git</span></tt> by
+the full path to <tt class="docutils literal"><span class="pre">git.exe</span></tt> on every invocation
+(eg. <tt class="docutils literal"><span class="pre">&quot;C:\Program</span> <span class="pre">Files\Git\bin\git.exe&quot;</span> <span class="pre">clone</span> <span class="pre">...</span></tt>)</p>
+</div>
+<p>Also, make sure you have all the <a class="reference external" href="Prerequisites.html">required dependencies</a> installed as well.
+Now, retrieve the bot&#8217;s code from the repository, using the following command:</p>
+<div class="highlight-python"><pre>$ git clone --recursive git://github.com/fpoirotte/Erebot.git
+$ cd Erebot/vendor/
+$ git clone --recursive git://github.com/fpoirotte/Erebot_Module_IrcConnector.git
+$ git clone --recursive git://github.com/fpoirotte/Erebot_Module_AutoConnect.git
+$ git clone --recursive git://github.com/fpoirotte/Erebot_Module_PingReply.git
+$ cd ..</pre>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Linux users (especially Erebot developers) may prefer to create a separate
+checkout for each component and then use symbolic links to join them
+together, like this:</p>
+<div class="last highlight-python"><pre>$ git clone --recursive git://github.com/fpoirotte/Erebot.git
+$ git clone --recursive git://github.com/fpoirotte/Erebot_Module_IrcConnector.git
+$ git clone --recursive git://github.com/fpoirotte/Erebot_Module_AutoConnect.git
+$ git clone --recursive git://github.com/fpoirotte/Erebot_Module_PingReply.git
+$ cd Erebot/vendor/
+$ ln -s ../../Erebot_Module_IrcConnector
+$ ln -s ../../Erebot_Module_AutoConnect
+$ ln -s ../../Erebot_Module_PingReply
+$ cd ..</pre>
+</div>
+</div>
+<p>Optionally, you can compile the translation files for each component.
+However, this requires that <a class="reference external" href="http://www.gnu.org/s/gettext/">gettext</a> and <a class="reference external" href="http://www.phing.info/">phing</a> be installed on your machine
+as well. See the documentation on Erebot&#8217;s <a class="reference external" href="Prerequisites.html">prerequisites</a> for additional
+information on how to install these tools depending on your system.</p>
+<p>Once you got those two up and running, the translation files can be compiled,
+assuming you&#8217;re currently in Erebot&#8217;s folder, using these commands:</p>
+<div class="highlight-python"><pre>$ phing
+$ cd vendor/Erebot_Module_IrcConnector/
+$ phing
+$ cd ../Erebot_Module_AutoConnect/
+$ phing
+$ cd ../Erebot_Module_PingReply/
+$ phing
+$ cd ../../</pre>
+</div>
+<p>Be sure to read the section on <a class="reference internal" href="#final-steps">final steps</a> for a summary of what to do next.</p>
+</div>
+<div class="section" id="final-steps">
+<h2><a class="toc-backref" href="#id5">Final steps</a><a class="headerlink" href="#final-steps" title="Permalink to this headline">¶</a></h2>
+<p>Once Erebot (core files + a few modules) has been installed, you can write a
+configuration file (usually named <tt class="docutils literal"><span class="pre">Erebot.xml</span></tt>) in the same folder where
+the bot was installed.</p>
+<p>When this is done, the bot can be started, assuming that PHP can be found on the
+<tt class="docutils literal"><span class="pre">PATH</span></tt> using one of the following commands. Exactly what command must be used
+depends on the installation method.</p>
+<p>For an installation using PEAR packages, simply run:</p>
+<div class="highlight-python"><pre>$ php /path/to/PEAR/bin_dir/Erebot</pre>
+</div>
+<p>For an installation using PHAR archives, from the folder in which you installed
+Erebot, run:</p>
+<div class="highlight-python"><pre>$ php ./Erebot-&lt;version&gt;.phar</pre>
+</div>
+<p>And finally, for an installation using the source code, from the folder where
+you installed Erebot, run:</p>
+<div class="highlight-python"><pre>$ php ./scripts/Erebot</pre>
+</div>
+<p>Let&#8217;s call this command <tt class="docutils literal"><span class="pre">%EREBOT%</span></tt>.</p>
+<p>In each case, the bot reacts to a few command-line options.
+Use the following command to get help on those options:</p>
+<div class="highlight-python"><pre>$ %EREBOT% --help</pre>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For ease of use, Linux users may like to add the path where
+<tt class="docutils literal"><span class="pre">Erebot-&lt;version&gt;.phar</span></tt> or the <tt class="docutils literal"><span class="pre">Erebot</span></tt> script reside to
+their <tt class="docutils literal"><span class="pre">PATH</span></tt>. This way, the bot can be started simply by launching
+<tt class="docutils literal"><span class="pre">Erebot</span></tt> or <tt class="docutils literal"><span class="pre">Erebot-&lt;version&gt;.phar</span></tt> from the command-line or by
+double-clicking on them from a graphical file browser.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Unfortunately for Windows users, there is no equivalent to the <tt class="docutils literal"><span class="pre">PATH</span></tt>
+trick noted above.
+However, it is possible to associate the <tt class="docutils literal"><span class="pre">.phar</span></tt> extension with PHP.
+This way, if Erebot was installed using PHAR archives, the bot can be
+started simply by double-clicking on <tt class="docutils literal"><span class="pre">Erebot-&lt;version&gt;.phar</span></tt>.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installation</a><ul>
+<li><a class="reference internal" href="#installation-from-erebot-s-pear-channel">Installation from Erebot&#8217;s PEAR channel</a></li>
+<li><a class="reference internal" href="#installation-using-phar-archives">Installation using PHAR archives</a></li>
+<li><a class="reference internal" href="#installation-from-source">Installation from source</a></li>
+<li><a class="reference internal" href="#final-steps">Final steps</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Prerequisites.html"
+                        title="previous chapter">Prerequisites</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Modules.html"
+                        title="next chapter">Compatible modules</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="Modules.html" title="Compatible modules"
+             >next</a></li>
+        <li class="right" >
+          <a href="Prerequisites.html" title="Prerequisites"
+             >previous</a> |</li>
+        <li><a href="index.html">Erebot v0.5.1.snapshot14 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Erebot.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
+    </div>
+  </body>
+</html>

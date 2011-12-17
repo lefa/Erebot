@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Prerequisites &mdash; Erebot v0.5.1.g4b035c4cf615cccae1030ee6d09f571ac3d76331 documentation</title>
+    <title>Prerequisites &mdash; Erebot v0.5.1.snapshot14 documentation</title>
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.5.1.g4b035c4cf615cccae1030ee6d09f571ac3d76331',
+        VERSION:     '0.5.1.snapshot14',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -22,10 +22,10 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Erebot v0.5.1.g4b035c4cf615cccae1030ee6d09f571ac3d76331 documentation"
+          title="Search within Erebot v0.5.1.snapshot14 documentation"
           href="_static/opensearch.xml"/>
-    <link rel="top" title="Erebot v0.5.1.g4b035c4cf615cccae1030ee6d09f571ac3d76331 documentation" href="index.html" />
-    <link rel="next" title="Compatible modules" href="Modules.html" />
+    <link rel="top" title="Erebot v0.5.1.snapshot14 documentation" href="index.html" />
+    <link rel="next" title="Installation" href="Installation.html" />
     <link rel="prev" title="Welcome to Erebot’s documentation!" href="index.html" /> 
   </head>
   <body>
@@ -33,12 +33,12 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="Modules.html" title="Compatible modules"
+          <a href="Installation.html" title="Installation"
              accesskey="N">next</a></li>
         <li class="right" >
           <a href="index.html" title="Welcome to Erebot’s documentation!"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Erebot v0.5.1.g4b035c4cf615cccae1030ee6d09f571ac3d76331 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Erebot v0.5.1.snapshot14 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -57,17 +57,23 @@ additional extensions (see the list of required <a class="reference internal" hr
 information).</p>
 <p>As of this writing, Erebot is known to work on PHP versions ranging from
 PHP 5.2.1 up to PHP 5.4.0RC1. Also, Erebot should run correctly on both
-Windows and Linux, as reflected by our <a class="reference external" href="https://buildbot.erebot.net/components/">Continuous Integration server</a>.</p>
+Windows (XP or later) and Linux (most distros).
+The code is tested using an automated process on both Windows XP (32 bits)
+and Linux Debian Stable (64 bits), as reflected by our
+<a class="reference external" href="https://buildbot.erebot.net/components/">Continuous Integration server</a>.</p>
 <div class="contents topic" id="contents">
 <p class="topic-title first">Contents</p>
 <ul class="simple">
 <li><a class="reference internal" href="#prerequisites" id="id27">Prerequisites</a><ul>
 <li><a class="reference internal" href="#how-to-read-this-page" id="id28">How to read this page</a></li>
-<li><a class="reference internal" href="#system-dependencies" id="id29">System dependencies</a></li>
-<li><a class="reference internal" href="#php-dependencies" id="id30">PHP dependencies</a><ul>
-<li><a class="reference internal" href="#compatible-installers" id="id31">Compatible installers</a></li>
-<li><a class="reference internal" href="#pecl-extensions" id="id32">PECL extensions</a></li>
-<li><a class="reference internal" href="#pear-packages" id="id33">PEAR packages</a></li>
+<li><a class="reference internal" href="#system-dependencies" id="id29">System dependencies</a><ul>
+<li><a class="reference internal" href="#special-instructions-for-windows-users" id="id30">Special instructions for Windows users</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#php-dependencies" id="id31">PHP dependencies</a><ul>
+<li><a class="reference internal" href="#compatible-installers" id="id32">Compatible installers</a></li>
+<li><a class="reference internal" href="#pecl-extensions" id="id33">PECL extensions</a></li>
+<li><a class="reference internal" href="#pear-packages" id="id34">PEAR packages</a></li>
 </ul>
 </li>
 </ul>
@@ -118,6 +124,9 @@ which contains the dependency:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="c"># yum install &lt;package&gt;</span>
 </pre></div>
 </div>
+</li>
+<li><p class="first">For Windows systems, please refer to the special instructions given
+below.</p>
 </li>
 </ul>
 <p>For each profile, a &#8220;yes&#8221; on a dependency&#8217;s row indicates that users of the
@@ -174,9 +183,22 @@ did not support that until 1.7.2.</td>
 </tr>
 </tbody>
 </table>
+<div class="section" id="special-instructions-for-windows-users">
+<h3><a class="toc-backref" href="#id30">Special instructions for Windows users</a><a class="headerlink" href="#special-instructions-for-windows-users" title="Permalink to this headline">¶</a></h3>
+<p>As Windows lacks a central package manager, a different set of instructions is
+necessary.</p>
+<p>I have yet to find a gettext binary for Windows that ships with a recent version
+of gettext and hence can support all the options used by Erebot.
+For now, a workaround is to <a class="reference external" href="http://cygwin.com/setup.exe">install Cygwin</a> and its gettext package on your
+machine. Refer to <a class="reference external" href="http://www.cygwin.com/">Cygwin&#8217;s website</a> for additional information.</p>
+<p>Hopefully, installing Doxygen on Windows is a lot simpler. Just grab the binary
+release relevant for your system from <a class="reference external" href="http://www.stack.nl/~dimitri/doxygen/download.html#latestsrc">Doxygen&#8217;s download page</a>.</p>
+<p>This setup is what we use (combined with PHP 5.3.8) to test Erebot with our
+<a class="reference external" href="https://buildbot.erebot.net/components/">Continuous Integration server</a>.</p>
+</div>
 </div>
 <div class="section" id="php-dependencies">
-<h2><a class="toc-backref" href="#id30">PHP dependencies</a><a class="headerlink" href="#php-dependencies" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id31">PHP dependencies</a><a class="headerlink" href="#php-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>There are two kinds of dependencies:</p>
 <dl class="docutils">
 <dt>PEAR packages</dt>
@@ -246,7 +268,7 @@ fullname and any version information that may be relevant
 <p>For each dependency, a short description as well as the profiles that are
 likely to be interested in installing that dependency are listed.</p>
 <div class="section" id="compatible-installers">
-<h3><a class="toc-backref" href="#id31">Compatible installers</a><a class="headerlink" href="#compatible-installers" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id32">Compatible installers</a><a class="headerlink" href="#compatible-installers" title="Permalink to this headline">¶</a></h3>
 <p>To install Erebot&#8217;s PHP dependencies, you will need a compatible installer.
 There are currently two of them:</p>
 <dl class="docutils">
@@ -302,7 +324,7 @@ use it to <strong>package</strong> Erebot or its dependencies though.</p>
 </div>
 </div>
 <div class="section" id="pecl-extensions">
-<h3><a class="toc-backref" href="#id32">PECL extensions</a><a class="headerlink" href="#pecl-extensions" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id33">PECL extensions</a><a class="headerlink" href="#pecl-extensions" title="Permalink to this headline">¶</a></h3>
 <p>The following table lists the PECL extensions needed to use Erebot.
 You may notice that most of these extensions are actually part of PHP Core.</p>
 <p>For each profile, a &#8220;yes&#8221; on a dependency&#8217;s row indicates that users of the
@@ -532,7 +554,7 @@ Not available on Windows.</td></tr>
 </table>
 </div>
 <div class="section" id="pear-packages">
-<h3><a class="toc-backref" href="#id33">PEAR packages</a><a class="headerlink" href="#pear-packages" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id34">PEAR packages</a><a class="headerlink" href="#pear-packages" title="Permalink to this headline">¶</a></h3>
 <p>The following table lists the PEAR packages needed to use Erebot.</p>
 <p>For each profile, a &#8220;yes&#8221; on a dependency&#8217;s row indicates that users of the
 given profile <strong>MUST</strong> install that dependency (requirement). Optional
@@ -685,7 +707,10 @@ which should <strong>ALWAYS</strong> be called before submitting a patch.</td></
   <ul>
 <li><a class="reference internal" href="#">Prerequisites</a><ul>
 <li><a class="reference internal" href="#how-to-read-this-page">How to read this page</a></li>
-<li><a class="reference internal" href="#system-dependencies">System dependencies</a></li>
+<li><a class="reference internal" href="#system-dependencies">System dependencies</a><ul>
+<li><a class="reference internal" href="#special-instructions-for-windows-users">Special instructions for Windows users</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#php-dependencies">PHP dependencies</a><ul>
 <li><a class="reference internal" href="#compatible-installers">Compatible installers</a></li>
 <li><a class="reference internal" href="#pecl-extensions">PECL extensions</a></li>
@@ -700,8 +725,8 @@ which should <strong>ALWAYS</strong> be called before submitting a patch.</td></
   <p class="topless"><a href="index.html"
                         title="previous chapter">Welcome to Erebot&#8217;s documentation!</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="Modules.html"
-                        title="next chapter">Compatible modules</a></p>
+  <p class="topless"><a href="Installation.html"
+                        title="next chapter">Installation</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -723,12 +748,12 @@ which should <strong>ALWAYS</strong> be called before submitting a patch.</td></
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="Modules.html" title="Compatible modules"
+          <a href="Installation.html" title="Installation"
              >next</a></li>
         <li class="right" >
           <a href="index.html" title="Welcome to Erebot’s documentation!"
              >previous</a> |</li>
-        <li><a href="index.html">Erebot v0.5.1.g4b035c4cf615cccae1030ee6d09f571ac3d76331 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Erebot v0.5.1.snapshot14 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

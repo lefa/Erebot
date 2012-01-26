@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Coding standard &mdash; Erebot v0.5.1snapshot174 documentation</title>
+    <title>Coding standard &mdash; Erebot v0.5.1snapshot178 documentation</title>
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.5.1snapshot174',
+        VERSION:     '0.5.1snapshot178',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -22,9 +22,9 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Erebot v0.5.1snapshot174 documentation"
+          title="Search within Erebot v0.5.1snapshot178 documentation"
           href="_static/opensearch.xml"/>
-    <link rel="top" title="Erebot v0.5.1snapshot174 documentation" href="index.html" />
+    <link rel="top" title="Erebot v0.5.1snapshot178 documentation" href="index.html" />
     <link rel="up" title="Developer Zone" href="Developer_Zone.html" />
     <link rel="next" title="Internationalization" href="Internationalization.html" />
     <link rel="prev" title="Developer Zone" href="Developer_Zone.html" /> 
@@ -39,7 +39,7 @@
         <li class="right" >
           <a href="Developer_Zone.html" title="Developer Zone"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Erebot v0.5.1snapshot174 documentation</a> &raquo;</li>
+        <li><a href="index.html">Erebot v0.5.1snapshot178 documentation</a> &raquo;</li>
           <li><a href="Developer_Zone.html" accesskey="U">Developer Zone</a> &raquo;</li> 
       </ul>
     </div>  
@@ -151,7 +151,7 @@ so as to line up the 3 (three) parts of the operator:</p>
 </div>
 <div class="section" id="casting">
 <h2><a class="toc-backref" href="#id4">Casting</a><a class="headerlink" href="#casting" title="Permalink to this headline">¶</a></h2>
-<p>Put a space between the (type) and the $variable in a cast:</p>
+<p>Put a single space between the (type) and the operand of a cast:</p>
 <div class="highlight-inline-php"><div class="highlight"><pre><span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="nv">$mynumber</span>
 </pre></div>
 </div>
@@ -189,14 +189,6 @@ in the following blog entries:</p>
 main contributors to Pyrus, the next generation PEAR installer)</li>
 </ul>
 <p>For switch statements:</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">It is sometimes useful to write a case statement which falls through
-to the next case by not including a <tt class="docutils literal"><span class="pre">break</span></tt> or <tt class="docutils literal"><span class="pre">return</span></tt> within
-that case. To distinguish these cases from bugs, any case statement
-where <tt class="docutils literal"><span class="pre">break</span></tt> or <tt class="docutils literal"><span class="pre">return</span></tt> are omitted should contain a comment
-indicating that this is the intended behaviour.</p>
-</div>
 <div class="highlight-inline-php"><div class="highlight"><pre><span class="k">switch</span> <span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">case</span> <span class="m">1</span><span class="o">:</span>
         <span class="nx">action1</span><span class="p">;</span>
@@ -210,6 +202,14 @@ indicating that this is the intended behaviour.</p>
         <span class="nx">defaultaction</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is sometimes useful to write a case statement which falls through
+to the next case by not including a <tt class="docutils literal"><span class="pre">break</span></tt> or <tt class="docutils literal"><span class="pre">return</span></tt> within
+that case. To distinguish these cases from bugs, any case statement
+where <tt class="docutils literal"><span class="pre">break</span></tt> or <tt class="docutils literal"><span class="pre">return</span></tt> are omitted should contain a comment
+indicating that this is the intended behaviour.</p>
 </div>
 <p>For do-while statements:</p>
 <div class="highlight-inline-php"><div class="highlight"><pre><span class="k">do</span> <span class="p">{</span>
@@ -982,7 +982,7 @@ official Erebot modules and that you added <a class="reference external" href="h
         <li class="right" >
           <a href="Developer_Zone.html" title="Developer Zone"
              >previous</a> |</li>
-        <li><a href="index.html">Erebot v0.5.1snapshot174 documentation</a> &raquo;</li>
+        <li><a href="index.html">Erebot v0.5.1snapshot178 documentation</a> &raquo;</li>
           <li><a href="Developer_Zone.html" >Developer Zone</a> &raquo;</li> 
       </ul>
     </div>

@@ -2,17 +2,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Erebot’s configuration &mdash; Erebot v0.5.1snapshot293 documentation</title>
+    <title>Erebot’s configuration &mdash; Erebot 0.5.1snapshot320 documentation</title>
+    
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.5.1snapshot293',
+        VERSION:     '0.5.1snapshot320',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -22,9 +25,9 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Erebot v0.5.1snapshot293 documentation"
+          title="Search within Erebot 0.5.1snapshot320 documentation"
           href="_static/opensearch.xml"/>
-    <link rel="top" title="Erebot v0.5.1snapshot293 documentation" href="index.html" />
+    <link rel="top" title="Erebot 0.5.1snapshot320 documentation" href="index.html" />
     <link rel="next" title="Compatible modules" href="Modules.html" />
     <link rel="prev" title="Installation" href="Installation.html" /> 
   </head>
@@ -38,7 +41,7 @@
         <li class="right" >
           <a href="Installation.html" title="Installation"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Erebot v0.5.1snapshot293 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Erebot 0.5.1snapshot320 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -131,7 +134,7 @@ Erebot is running on more than to IRC itself.</p>
 <col width="51%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Attribute</th>
+<tr class="row-odd"><th class="head">Attribute</th>
 <th class="head">Default
 value</th>
 <th class="head">Required</th>
@@ -139,7 +142,7 @@ value</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>commands-prefix</td>
+<tr class="row-even"><td>commands-prefix</td>
 <td>n/a</td>
 <td><strong>Yes</strong></td>
 <td>The prefix used to identify
@@ -147,21 +150,21 @@ commands adressed to the bot.
 Common values include: <tt class="docutils literal"><span class="pre">!</span></tt>,
 <tt class="docutils literal"><span class="pre">'</span></tt>, <tt class="docutils literal"><span class="pre">&#64;</span></tt>, etc.</td>
 </tr>
-<tr><td>daemon</td>
+<tr class="row-odd"><td>daemon</td>
 <td>n/a</td>
 <td>No</td>
 <td>Whether to start the bot as a
-daemon (<tt class="xref docutils literal"><span class="pre">True</span></tt>) or not
-(<tt class="xref docutils literal"><span class="pre">False</span></tt>).</td>
+daemon (<tt class="docutils literal"><span class="pre">True</span></tt>) or not
+(<tt class="docutils literal"><span class="pre">False</span></tt>).</td>
 </tr>
-<tr><td>group</td>
+<tr class="row-even"><td>group</td>
 <td>n/a</td>
 <td>No</td>
 <td>Once started, assume that group&#8217;s
 identity (given as a GID or as
 a name).</td>
 </tr>
-<tr><td>language</td>
+<tr class="row-odd"><td>language</td>
 <td>n/a</td>
 <td><strong>Yes</strong></td>
 <td>The preferred locale to use, as
@@ -170,26 +173,26 @@ an IETF language tag (eg.
 usual Linux format for locales
 (<tt class="docutils literal"><span class="pre">en_US</span></tt>) is also supported.</td>
 </tr>
-<tr><td>pidfile</td>
+<tr class="row-even"><td>pidfile</td>
 <td>n/a</td>
 <td>No</td>
 <td>Store the bot&#8217;s PID in this file.</td>
 </tr>
-<tr><td>timezone</td>
+<tr class="row-odd"><td>timezone</td>
 <td>n/a</td>
 <td><strong>Yes</strong></td>
 <td>A string describing the
 computer&#8217;s current timezone, such
 as <tt class="docutils literal"><span class="pre">Europe/Paris</span></tt>. [#]</td>
 </tr>
-<tr><td>user</td>
+<tr class="row-even"><td>user</td>
 <td>n/a</td>
 <td>No</td>
 <td>Once started, assume that user&#8217;s
 identity (given as a UID or as
 a name).</td>
 </tr>
-<tr><td>version</td>
+<tr class="row-odd"><td>version</td>
 <td>n/a</td>
 <td><strong>Yes</strong></td>
 <td>Must match the Erebot&#8217;s version.
@@ -238,7 +241,7 @@ will replace settings defined at the <a class="reference internal" href="#networ
 is considered as being at a lower level as <a class="reference internal" href="#server">&lt;server&gt;</a> for the purposes
 of this mechanism.</p>
 <p>You may choose to enable/disable a module at a particular level by setting
-its <tt class="docutils literal"><span class="pre">active</span></tt> attribute to <tt class="xref docutils literal"><span class="pre">True</span></tt> or <tt class="xref docutils literal"><span class="pre">False</span></tt> (respectively).</p>
+its <tt class="docutils literal"><span class="pre">active</span></tt> attribute to <tt class="docutils literal"><span class="pre">True</span></tt> or <tt class="docutils literal"><span class="pre">False</span></tt> (respectively).</p>
 <p>The following table lists attributes of this tag, their default value
 and their role.</p>
 <table border="1" class="docutils">
@@ -249,21 +252,21 @@ and their role.</p>
 <col width="62%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Attribute</th>
+<tr class="row-odd"><th class="head">Attribute</th>
 <th class="head">Default value</th>
 <th class="head">Role</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>name</td>
+<tr class="row-even"><td>name</td>
 <td>n/a</td>
 <td>The name of the module to load/unload.</td>
 </tr>
-<tr><td>active</td>
-<td><tt class="xref docutils literal"><span class="pre">True</span></tt></td>
+<tr class="row-odd"><td>active</td>
+<td><tt class="docutils literal"><span class="pre">True</span></tt></td>
 <td>Indicates whether the module should be
-enabled at that level (<tt class="xref docutils literal"><span class="pre">True</span></tt>), or
-disabled (<tt class="xref docutils literal"><span class="pre">False</span></tt>).</td>
+enabled at that level (<tt class="docutils literal"><span class="pre">True</span></tt>), or
+disabled (<tt class="docutils literal"><span class="pre">False</span></tt>).</td>
 </tr>
 </tbody>
 </table>
@@ -282,17 +285,17 @@ mandatory attributes, as described in the table below.</p>
 <col width="62%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Attribute</th>
+<tr class="row-odd"><th class="head">Attribute</th>
 <th class="head">Default value</th>
 <th class="head">Role</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>name</td>
+<tr class="row-even"><td>name</td>
 <td>n/a</td>
 <td>The name of the parameter.</td>
 </tr>
-<tr><td>value</td>
+<tr class="row-odd"><td>value</td>
 <td>n/a</td>
 <td>The value for that parameter. Different
 types of values are accepted. The precise
@@ -322,13 +325,13 @@ The following table lists attributes of this tag with their role.</p>
 <col width="62%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Attribute</th>
+<tr class="row-odd"><th class="head">Attribute</th>
 <th class="head">Default value</th>
 <th class="head">Role</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>name</td>
+<tr class="row-even"><td>name</td>
 <td>n/a</td>
 <td>The name of that IRC network.</td>
 </tr>
@@ -355,13 +358,13 @@ The following table lists attributes of this tag with their role.</p>
 <col width="62%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Attribute</th>
+<tr class="row-odd"><th class="head">Attribute</th>
 <th class="head">Default value</th>
 <th class="head">Role</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>url</td>
+<tr class="row-even"><td>url</td>
 <td>n/a</td>
 <td>Connection URLs to use to contact this
 IRC server.</td>
@@ -394,24 +397,24 @@ supported parameters:</p>
 <col width="45%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Name</th>
+<tr class="row-odd"><th class="head">Name</th>
 <th class="head">Valid values</th>
 <th class="head">Description</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>verify_peer</td>
+<tr class="row-even"><td>verify_peer</td>
 <td><tt class="docutils literal"><span class="pre">0</span></tt> or <tt class="docutils literal"><span class="pre">1</span></tt></td>
 <td>Check if the certificate
 really belongs to the target
 IRC server.</td>
 </tr>
-<tr><td>allow_self_signed</td>
+<tr class="row-odd"><td>allow_self_signed</td>
 <td><tt class="docutils literal"><span class="pre">0</span></tt> or <tt class="docutils literal"><span class="pre">1</span></tt></td>
 <td>Consider self-signed
 certificates to be valid.</td>
 </tr>
-<tr><td>ciphers</td>
+<tr class="row-even"><td>ciphers</td>
 <td>a list of ciphers
 separated by
 colons</td>
@@ -460,13 +463,13 @@ The following table lists attributes of this tag with their role.</p>
 <col width="62%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Attribute</th>
+<tr class="row-odd"><th class="head">Attribute</th>
 <th class="head">Default value</th>
 <th class="head">Role</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>name</td>
+<tr class="row-even"><td>name</td>
 <td>n/a</td>
 <td>The name of the IRC channel being
 configured.</td>
@@ -552,12 +555,12 @@ for this IRC channel.</p>
         <li class="right" >
           <a href="Installation.html" title="Installation"
              >previous</a> |</li>
-        <li><a href="index.html">Erebot v0.5.1snapshot293 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Erebot 0.5.1snapshot320 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2011, Erebot.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
     </div>
   </body>
 </html>

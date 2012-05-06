@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Coding standard &mdash; Erebot 0.5.1snapshot488 documentation</title>
+    <title>Coding standard &mdash; Erebot 0.5.1snapshot489 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.5.1snapshot488',
+        VERSION:     '0.5.1snapshot489',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Erebot 0.5.1snapshot488 documentation"
+          title="Search within Erebot 0.5.1snapshot489 documentation"
           href="_static/opensearch.xml"/>
-    <link rel="top" title="Erebot 0.5.1snapshot488 documentation" href="index.html" />
+    <link rel="top" title="Erebot 0.5.1snapshot489 documentation" href="index.html" />
     <link rel="up" title="Developer Zone" href="Developer_Zone.html" />
     <link rel="next" title="Internationalization" href="Internationalization.html" />
     <link rel="prev" title="Developer Zone" href="Developer_Zone.html" /> 
@@ -42,7 +42,7 @@
         <li class="right" >
           <a href="Developer_Zone.html" title="Developer Zone"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Erebot 0.5.1snapshot488 documentation</a> &raquo;</li>
+        <li><a href="index.html">Erebot 0.5.1snapshot489 documentation</a> &raquo;</li>
           <li><a href="Developer_Zone.html" accesskey="U">Developer Zone</a> &raquo;</li> 
       </ul>
     </div>  
@@ -337,6 +337,16 @@ to line up function calls and promote readability:</p>
 <span class="nv">$longVariable</span>  <span class="o">=</span> <span class="nx">foo</span><span class="p">(</span><span class="nv">$baz</span><span class="p">);</span>
 </pre></div>
 </div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">For methods/functions defined by the core of PHP or any of its extension,
+(that is, anything that isn&#8217;t userland-define), always respect the case
+given by the PHP manual. Even though PHP is case-insensitive for most
+identifiers, there are recurring propositions about turning it into
+a case-sensitive language for everything. Using the official case
+from the start makes the code forward-compatible if such a change is
+ever made.</p>
+</div>
 </div>
 <div class="section" id="function-method-declarations">
 <span id="cs-fn-decl"></span><h2><a class="toc-backref" href="#id8">Function/method declarations</a><a class="headerlink" href="#function-method-declarations" title="Permalink to this headline">¶</a></h2>
@@ -428,8 +438,8 @@ if a method is later changed to return by reference.</p>
 </pre></div>
 </div>
 <p>Exceptions may also be used instead of returning <tt class="docutils literal"><span class="pre">NULL</span></tt>.
-Whether an exception an exception should be raised or <tt class="docutils literal"><span class="pre">NULL</span></tt> / an empty
-array returned is left to the appreciation of developpers.</p>
+Whether an exception should be raised or <tt class="docutils literal"><span class="pre">NULL</span></tt> / an empty array
+returned is left to the appreciation of developpers.</p>
 </div>
 <div class="section" id="class-constructor-calls">
 <h2><a class="toc-backref" href="#id9">Class constructor calls</a><a class="headerlink" href="#class-constructor-calls" title="Permalink to this headline">¶</a></h2>
@@ -531,7 +541,64 @@ on each side as with the assignment operator:</p>
 </div>
 <div class="section" id="comments">
 <h2><a class="toc-backref" href="#id13">Comments</a><a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
-<p>&#64;TODO</p>
+<p>Don&#8217;t use Perl-style commands (<tt class="docutils literal"><span class="pre">#</span> <span class="pre">Comment</span></tt>). For comments that span several
+lines, we recommend that you use C++ comments (<tt class="docutils literal"><span class="pre">/*</span> <span class="pre">Comment</span> <span class="pre">*/</span></tt>).</p>
+<p>When using C++ comments, you may use asterisks (&#8220;stars&#8221;) at the start of each
+line.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Use of comments such as <tt class="docutils literal"><span class="pre">/**</span> <span class="pre">...</span> <span class="pre">*/</span></tt> or <tt class="docutils literal"><span class="pre">///</span></tt> is reserved for API
+documentation purposes using <a class="reference external" href="http://www.stack.nl/~dimitri/doxygen/commands.html">Doxygen commands</a>.
+You <strong>MAY NOT</strong> use them to explain the logic of your code.
+Use the regular forms <tt class="docutils literal"><span class="pre">/*</span> <span class="pre">...</span> <span class="pre">*/</span></tt> &amp; <tt class="docutils literal"><span class="pre">//</span></tt> instead in such cases.</p>
+</div>
+<p>For example,</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+    <span class="c1">// Connects the bot to the default servers.</span>
+    <span class="nv">$bot</span><span class="o">-&gt;</span><span class="na">connect</span><span class="p">();</span>
+
+    <span class="cm">/* This is a very long comment about the purpose of the snippet</span>
+<span class="cm">     * of code that goes right after this comment, so as to explain</span>
+<span class="cm">     * what it does (in case this may not be easy to understand) as</span>
+<span class="cm">     * well as how it is done (for example, to describe side-effects).</span>
+<span class="cm">     */</span>
+    <span class="nx">do_something_very_complex</span><span class="p">();</span>
+
+    <span class="c1"># This kind of comments MUST NOT be used.</span>
+    <span class="nx">oops</span><span class="p">();</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * \brief</span>
+<span class="sd">     *      A well known pseudo-random number generator.</span>
+<span class="sd">     *</span>
+<span class="sd">     * This type of comments may only be used to describe the API,</span>
+<span class="sd">     * using Doxygen commands.</span>
+<span class="sd">     */</span>
+    <span class="k">class</span> <span class="nc">PRNG</span>
+    <span class="p">{</span>
+        <span class="c1">// The next comment describes part of this class&#39; API.</span>
+        <span class="c1">/// Seed for the PRNG.</span>
+        <span class="k">const</span> <span class="no">SEED</span> <span class="o">=</span> <span class="m">4</span><span class="p">;</span>
+
+        <span class="sd">/**</span>
+<span class="sd">         * \brief</span>
+<span class="sd">         *      Return a new random number.</span>
+<span class="sd">         *</span>
+<span class="sd">         * \retval int</span>
+<span class="sd">         *      Some random number.</span>
+<span class="sd">         */</span>
+        <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">getRandomNumber</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">self</span><span class="o">::</span><span class="na">SEED</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition-todo admonition " id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Add a section on API documentation.</p>
+</div>
 </div>
 <div class="section" id="filesystem-paths">
 <span id="cs-fs-paths"></span><h2><a class="toc-backref" href="#id14">Filesystem paths</a><a class="headerlink" href="#filesystem-paths" title="Permalink to this headline">¶</a></h2>
@@ -660,7 +727,8 @@ In particular, for one-line PHP blocks:</p>
 </div>
 <div class="section" id="example-urls">
 <h2><a class="toc-backref" href="#id18">Example URLs</a><a class="headerlink" href="#example-urls" title="Permalink to this headline">¶</a></h2>
-<p>Use &#8220;example.com&#8221; for all example URLs, per <span class="target" id="index-0"></span><a class="rfc reference external" href="http://tools.ietf.org/html/rfc2606.html"><strong>RFC 2606</strong></a>.</p>
+<p>Use <tt class="docutils literal"><span class="pre">example.com</span></tt> as the domain for all example URLs, per <span class="target" id="index-1"></span><a class="rfc reference external" href="http://tools.ietf.org/html/rfc2606.html"><strong>RFC 2606</strong></a>.
+You may also refer to subdomains of this domain, eg. <tt class="docutils literal"><span class="pre">irc.example.com</span></tt>.</p>
 </div>
 <div class="section" id="naming-conventions-functions-constants-global-variables-classes-files">
 <span id="naming-conventions"></span><h2><a class="toc-backref" href="#id19">Naming Conventions (Functions, Constants, Global Variables, Classes, Files)</a><a class="headerlink" href="#naming-conventions-functions-constants-global-variables-classes-files" title="Permalink to this headline">¶</a></h2>
@@ -730,11 +798,10 @@ Add extra spaces to line up the class and interface names.</p>
 For example, all classes belonging to an Erebot module start with the prefix
 <tt class="samp docutils literal"><span class="pre">Erebot_Module_</span><em><span class="pre">ModuleName</span></em></tt>.
 See also <a class="reference internal" href="#cs-naming-files"><em>Files</em></a> for implications.</p>
-<p>For interface, the text <tt class="docutils literal"><span class="pre">Interface</span></tt> should always appear in the interface&#8217;s
-name, preferably at the end (eg. <tt class="docutils literal"><span class="pre">Erebot_Module_FooInterface</span></tt>).
+<p>For an interface, the text <tt class="docutils literal"><span class="pre">Interface</span></tt> should always appear in the
+interface&#8217;s name, preferably at the end (eg. <tt class="docutils literal"><span class="pre">Erebot_Module_FooInterface</span></tt>).
 If you prefer to use a separate directory where all the interfaces are stored,
-this is also permitted using a name such as
-<tt class="docutils literal"><span class="pre">Erebot_Module_Foo_Interface_Generic</span></tt>.</p>
+this is also permitted (eg. <tt class="docutils literal"><span class="pre">Erebot_Module_Foo_Interface_Generic</span></tt>).</p>
 </div>
 <div class="section" id="class-methods-and-properties">
 <h3><a class="toc-backref" href="#id22">Class methods and properties</a><a class="headerlink" href="#class-methods-and-properties" title="Permalink to this headline">¶</a></h3>
@@ -985,7 +1052,7 @@ official Erebot modules and that you added <a class="reference external" href="h
         <li class="right" >
           <a href="Developer_Zone.html" title="Developer Zone"
              >previous</a> |</li>
-        <li><a href="index.html">Erebot 0.5.1snapshot488 documentation</a> &raquo;</li>
+        <li><a href="index.html">Erebot 0.5.1snapshot489 documentation</a> &raquo;</li>
           <li><a href="Developer_Zone.html" >Developer Zone</a> &raquo;</li> 
       </ul>
     </div>

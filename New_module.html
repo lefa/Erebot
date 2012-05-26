@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Writing a new module &mdash; Erebot 0.5.1snapshot521 documentation</title>
+    <title>Writing a new module &mdash; Erebot 0.5.1snapshot522 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.5.1snapshot521',
+        VERSION:     '0.5.1snapshot522',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Erebot 0.5.1snapshot521 documentation"
+          title="Search within Erebot 0.5.1snapshot522 documentation"
           href="_static/opensearch.xml"/>
-    <link rel="top" title="Erebot 0.5.1snapshot521 documentation" href="index.html" />
+    <link rel="top" title="Erebot 0.5.1snapshot522 documentation" href="index.html" />
     <link rel="up" title="Developer Zone" href="Developer_Zone.html" />
     <link rel="next" title="TODO list" href="TODO.html" />
     <link rel="prev" title="Styling" href="Styling.html" /> 
@@ -42,7 +42,7 @@
         <li class="right" >
           <a href="Styling.html" title="Styling"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Erebot 0.5.1snapshot521 documentation</a> &raquo;</li>
+        <li><a href="index.html">Erebot 0.5.1snapshot522 documentation</a> &raquo;</li>
           <li><a href="Developer_Zone.html" accesskey="U">Developer Zone</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,17 +55,33 @@
   <blockquote>
 <div></div></blockquote>
 <div class="section" id="writing-a-new-module">
-<h1>Writing a new module<a class="headerlink" href="#writing-a-new-module" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id1">Writing a new module</a><a class="headerlink" href="#writing-a-new-module" title="Permalink to this headline">¶</a></h1>
 <p>This page acts like a guide for those who may be interested in writing a new
-module for Erebot.</p>
+module for Erebot. It assumes basic knowledge of some of the features provided
+by Erebot for developers (such as the <a class="reference external" href="Styling.html">styling features</a> and <a class="reference external" href="Internationalization.html">i18n features</a>).</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#writing-a-new-module" id="id1">Writing a new module</a><ul>
+<li><a class="reference internal" href="#general-structure" id="id2">General structure</a></li>
+<li><a class="reference internal" href="#helping-users" id="id3">Helping users</a></li>
+<li><a class="reference internal" href="#frequently-asked-questions" id="id4">Frequently Asked Questions</a><ul>
+<li><a class="reference internal" href="#what-features-can-i-use-in-a-new-module" id="id5">What features can I use in a new module?</a></li>
+<li><a class="reference internal" href="#are-there-patterns-i-should-avoid" id="id6">Are there patterns I should avoid?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="section" id="general-structure">
-<h2>General structure<a class="headerlink" href="#general-structure" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">General structure</a><a class="headerlink" href="#general-structure" title="Permalink to this headline">¶</a></h2>
 <p>An Erebot module is a PHP class that extends <tt class="docutils literal"><span class="pre">Erebot_Module_Base</span></tt>.
 As such, it must have at least two methods (declared <em>abstract</em> in
 <tt class="docutils literal"><span class="pre">Erebot_Module_Base</span></tt>):</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">_reload()</span></tt> is called when the module is (re)loaded with some
-flags giving more information about where is being reloaded.
+flags giving more information about what must be (re)loaded.
 The flags are a bitwise-OR combination of the <tt class="docutils literal"><span class="pre">RELOAD_*</span></tt> constants
 found in <tt class="docutils literal"><span class="pre">Erebot_Module_Base</span></tt>.</li>
 <li><tt class="docutils literal"><span class="pre">_unload()</span></tt> is called when the module is unloaded. Its purpose
@@ -81,13 +97,13 @@ exits).</p>
 </div>
 </div>
 <div class="section" id="helping-users">
-<h2>Helping users<a class="headerlink" href="#helping-users" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">Helping users</a><a class="headerlink" href="#helping-users" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Adding an help method to your module is totally optional, but it is
 considered good practice as it provides some way for users to request
 help on your new module and its commands without having to read some
-online manual for example.</p>
+online manual.</p>
 </div>
 <p>To provide help for your module, all you need is a method that handles
 help requests. The name of that method does not matter (though this method
@@ -146,6 +162,47 @@ or topics it knows nothing about. You <strong>must</strong> ignore such requests
 (by returning <tt class="docutils literal"><span class="pre">FALSE</span></tt> or nothing at all) and you <strong>must not</strong>
 send a message indicating an error in the request to the user.</p>
 </div>
+<p>The listing below shows an example of a very simple help method for
+an imaginary module:</p>
+<div class="highlight-inline-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">getHelp</span><span class="p">(</span>
+    <span class="nx">Erebot_Interface_Event_Base_TextMessage</span> <span class="nv">$event</span><span class="p">,</span>
+    <span class="nx">Erebot_Interface_TextWrapper</span>            <span class="nv">$words</span>
+<span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$event</span> <span class="nx">instanceof</span> <span class="nx">Erebot_Interface_Event_Base_Private</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$target</span> <span class="o">=</span> <span class="nv">$event</span><span class="o">-&gt;</span><span class="na">getSource</span><span class="p">();</span>
+        <span class="nv">$chan</span>   <span class="o">=</span> <span class="k">NULL</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+        <span class="nv">$target</span> <span class="o">=</span> <span class="nv">$chan</span> <span class="o">=</span> <span class="nv">$event</span><span class="o">-&gt;</span><span class="na">getChan</span><span class="p">();</span>
+
+    <span class="nv">$fmt</span>        <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getFormatter</span><span class="p">(</span><span class="nv">$chan</span><span class="p">);</span>
+    <span class="nv">$moduleName</span> <span class="o">=</span> <span class="nb">strtolower</span><span class="p">(</span><span class="nb">get_class</span><span class="p">());</span>
+    <span class="nv">$nbArgs</span>     <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$words</span><span class="p">);</span>
+
+    <span class="c1">// Help request on the module itself.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$nbArgs</span> <span class="o">==</span> <span class="m">1</span> <span class="o">&amp;&amp;</span> <span class="nv">$words</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="o">==</span> <span class="nv">$moduleName</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$msg</span> <span class="o">=</span> <span class="nv">$fmt</span><span class="o">-&gt;</span><span class="na">_</span><span class="p">(</span><span class="s1">&#39;This is an &lt;b&gt;imaginary&lt;/b&gt; module.&#39;</span><span class="p">);</span>
+
+        <span class="c1">// We send the message back to where the request came from:</span>
+        <span class="c1">// in a private query or an IRC channel.</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sendMessage</span><span class="p">(</span><span class="nv">$target</span><span class="p">,</span> <span class="nv">$msg</span><span class="p">);</span>
+        <span class="k">return</span> <span class="k">TRUE</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// This module does not care about other help requests.</span>
+    <span class="c1">// So we don&#39;t return anything here. This is the same</span>
+    <span class="c1">// as if &quot;return;&quot; or &quot;return NULL;&quot; had been used.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We used the <tt class="docutils literal"><span class="pre">getFormatter()</span></tt> method here to be able to <a class="reference external" href="Styling.html">format</a> the help
+message (to make &#8220;imaginary&#8221; appear in bold in the output). We also used
+the formatter&#8217;s <tt class="docutils literal"><span class="pre">_()</span></tt> method to mark the message for <a class="reference external" href="Internationalization.html">translating</a>.
+This is the recommended practice.</p>
+</div>
 <p>Once the code for your help method is ready, you have to tell Erebot about it
 by using the <tt class="docutils literal"><span class="pre">registerHelpMethod()</span></tt> method inside your module&#8217;s <tt class="docutils literal"><span class="pre">_reload()</span></tt>
 method. You must call <tt class="docutils literal"><span class="pre">registerHelpMethod()</span></tt> with an object implementing the
@@ -163,14 +220,15 @@ method. You must call <tt class="docutils literal"><span class="pre">registerHel
 </div>
 </div>
 <div class="section" id="frequently-asked-questions">
-<h2>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h2>
-<p>This sections contains random information aboout modules:</p>
-<ul>
-<li><p class="first">What features can I use in a new module?</p>
+<h2><a class="toc-backref" href="#id4">Frequently Asked Questions</a><a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h2>
+<p>This sections contains random questions about modules&#8217; development.</p>
+<div class="section" id="what-features-can-i-use-in-a-new-module">
+<h3><a class="toc-backref" href="#id5">What features can I use in a new module?</a><a class="headerlink" href="#what-features-can-i-use-in-a-new-module" title="Permalink to this headline">¶</a></h3>
 <p>You can use any of the many features provided by the PHP language.
 This includes things such as sockets, databases, etc.</p>
-</li>
-<li><p class="first">Likewise, are there patterns I should avoid?</p>
+</div>
+<div class="section" id="are-there-patterns-i-should-avoid">
+<h3><a class="toc-backref" href="#id6">Are there patterns I should avoid?</a><a class="headerlink" href="#are-there-patterns-i-should-avoid" title="Permalink to this headline">¶</a></h3>
 <p>Even though you can do pretty much anything you want in a module,
 you should avoid long running tasks such as downloading a big file
 from a remote server.</p>
@@ -180,8 +238,7 @@ stopped. This includes other modules (like <tt class="docutils literal"><span cl
 responsible for keeping the connection alive. Hence, running a long task
 in your module may result in the bot being disconnected from IRC servers
 with a &#8220;Ping timeout&#8221; error.</p>
-</li>
-</ul>
+</div>
 </div>
 </div>
 
@@ -196,7 +253,11 @@ with a &#8220;Ping timeout&#8221; error.</p>
 <li><a class="reference internal" href="#">Writing a new module</a><ul>
 <li><a class="reference internal" href="#general-structure">General structure</a></li>
 <li><a class="reference internal" href="#helping-users">Helping users</a></li>
-<li><a class="reference internal" href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+<li><a class="reference internal" href="#frequently-asked-questions">Frequently Asked Questions</a><ul>
+<li><a class="reference internal" href="#what-features-can-i-use-in-a-new-module">What features can I use in a new module?</a></li>
+<li><a class="reference internal" href="#are-there-patterns-i-should-avoid">Are there patterns I should avoid?</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -233,7 +294,7 @@ with a &#8220;Ping timeout&#8221; error.</p>
         <li class="right" >
           <a href="Styling.html" title="Styling"
              >previous</a> |</li>
-        <li><a href="index.html">Erebot 0.5.1snapshot521 documentation</a> &raquo;</li>
+        <li><a href="index.html">Erebot 0.5.1snapshot522 documentation</a> &raquo;</li>
           <li><a href="Developer_Zone.html" >Developer Zone</a> &raquo;</li> 
       </ul>
     </div>

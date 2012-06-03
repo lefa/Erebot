@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Contribute &mdash; Erebot 0.5.1snapshot555 documentation</title>
+    <title>Contribute &mdash; Erebot 0.5.1snapshot560 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.5.1snapshot555',
+        VERSION:     '0.5.1snapshot560',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,10 +25,10 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Erebot 0.5.1snapshot555 documentation"
+          title="Search within Erebot 0.5.1snapshot560 documentation"
           href="_static/opensearch.xml"/>
-    <link rel="top" title="Erebot 0.5.1snapshot555 documentation" href="index.html" />
-    <link rel="next" title="Developer Zone" href="Developer_Zone.html" />
+    <link rel="top" title="Erebot 0.5.1snapshot560 documentation" href="index.html" />
+    <link rel="next" title="Buildslaves" href="Buildslaves.html" />
     <link rel="prev" title="Frequently Asked Questions" href="FAQ.html" /> 
   </head>
   <body>
@@ -36,12 +36,12 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="Developer_Zone.html" title="Developer Zone"
+          <a href="Buildslaves.html" title="Buildslaves"
              accesskey="N">next</a></li>
         <li class="right" >
           <a href="FAQ.html" title="Frequently Asked Questions"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Erebot 0.5.1snapshot555 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Erebot 0.5.1snapshot560 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -60,22 +60,68 @@ This is the right page!</p>
 to the project:</p>
 <ul class="simple">
 <li>by <a class="reference external" href="https://github.com/Erebot/Erebot/issues/new">reporting new issues</a> (or asking for new features)</li>
-<li>by forking the code and <a class="reference external" href="https://github.com/Erebot/Erebot/pulls">sending pull requests</a></li>
-<li>by running the tests suite (either manually or by
-<a class="reference external" href="Buildslaves.html">providing a test machine</a> <a class="footnote-reference" href="#id2" id="id1">[1]</a>)</li>
-<li>by <a class="reference external" href="irc://irc.iiens.net/Erebot">joining our IRC channel</a></li>
+<li>by forking the code and sending <a class="reference internal" href="#pull-requests">pull requests</a></li>
+<li>by running the tests suite (manually or by providing a <a class="reference internal" href="#test-machine">test machine</a>)</li>
+<li>by submitting <a class="reference internal" href="#new-translations">new translations</a> (or patches for existing ones)</li>
 </ul>
+<p>Whichever one it is, you may also <a class="reference external" href="irc://irc.iiens.net/Erebot">join our IRC channel</a> to discuss issues,
+new ideas / feature requests and follow the bot&#8217;s development.</p>
+<div class="section" id="code-patch">
+<span id="pull-requests"></span><h2>Code/patch<a class="headerlink" href="#code-patch" title="Permalink to this headline">¶</a></h2>
 <p>If you plan on sending patches (or pull requests), please read our
-documentation on the <a class="reference external" href="Coding_Standard.html">coding standard</a> used by Erebot developers first.</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Such a machine is usually called a &#8220;buildslave&#8221; as it will
-run miscellaneous tasks each time a new version of the code is
-released (eg. build the HTML documentation, build PEAR packages,
-run the test suites, etc.).</td></tr>
-</tbody>
-</table>
+documentation on the <a class="reference external" href="Coding_Standard.html">coding standard</a> used by Erebot developers first.
+Your patch will have greater chances to be approved if it abides by that
+standard when you submit it.</p>
+<p>To contribute a patch, you will need a GitHub account. Then you can simply:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/Erebot/Erebot/fork_select">Fork the code</a> to your own account.</li>
+<li>Create a new branch.</li>
+<li>Patch things up as much as you want.</li>
+<li>Create a pull request with your changes.</li>
+</ul>
+<p>Once your pull request has been received, it will undergo a review process
+to decide whether it can be accepted as-is, needs more changes before having
+a chance to be accepted or is utterly rejected.</p>
+<div class="toctree-wrapper compound" id="test-machine">
+</div>
+</div>
+<div class="section" id="test-machines">
+<h2>Test machines<a class="headerlink" href="#test-machines" title="Permalink to this headline">¶</a></h2>
+<p>So, you have some spare CPU cycles to contribute? We&#8217;re glad to hear that!</p>
+<p>The Erebot project uses <a class="reference external" href="http://buildbot.net/">Buildbot</a> for its continuous integration.
+The process of setting up a test machine (more oftenly called a &#8220;buildslave&#8221;
+in Buildbot&#8217;s terminology) is a bit tedious and deserves
+<a class="reference external" href="Buildslaves.html">a page of its own</a>.</p>
+</div>
+<div class="section" id="translations">
+<span id="new-translations"></span><h2>Translations<a class="headerlink" href="#translations" title="Permalink to this headline">¶</a></h2>
+<p>The project uses the <a class="reference external" href="https://www.transifex.net/">Transifex service</a> to manage translations.
+All submissions or patches to translations should be submitted through
+<a class="reference external" href="https://www.transifex.net/projects/p/Erebot/">Erebot&#8217;s project page on Transifex</a>.</p>
+<p>To submit a new translation or a patch for an already existing translation,
+you will need a Transifex account. Then, apply for one of the translation teams
+or request the creation of a new team in case none currently exists for your
+language. As soon as you have joined one of the translation teams, you may
+proceed with your changes.</p>
+<p>Just like for the code, translations undergo manual review. Once a translation
+has been formally reviewed, it will automatically be merged in the project
+alongside other translations.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>There is a tight integration between the code and the translations.
+The translations on Transifex are periodically synchronized with the
+messages in the repository, meaning that any change / new message
+in the code quickly appears on the Transifex page.</p>
+<p class="last">This goes both ways: changes to the translations are automatically
+merged in the code&#8217;s repository once they have been approved by one
+of your team&#8217;s reviewers.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It usually takes from 5 to 10 minutes after a translation has been
+approved before the changes are visible in the repository.</p>
+</div>
+</div>
 </div>
 
 
@@ -84,12 +130,24 @@ run the test suites, etc.).</td></tr>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Contribute</a><ul>
+<li><a class="reference internal" href="#code-patch">Code/patch</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#test-machines">Test machines</a></li>
+<li><a class="reference internal" href="#translations">Translations</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="FAQ.html"
                         title="previous chapter">Frequently Asked Questions</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="Developer_Zone.html"
-                        title="next chapter">Developer Zone</a></p>
+  <p class="topless"><a href="Buildslaves.html"
+                        title="next chapter">Buildslaves</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -111,12 +169,12 @@ run the test suites, etc.).</td></tr>
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="Developer_Zone.html" title="Developer Zone"
+          <a href="Buildslaves.html" title="Buildslaves"
              >next</a></li>
         <li class="right" >
           <a href="FAQ.html" title="Frequently Asked Questions"
              >previous</a> |</li>
-        <li><a href="index.html">Erebot 0.5.1snapshot555 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Erebot 0.5.1snapshot560 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

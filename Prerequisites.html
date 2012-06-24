@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Prerequisites &mdash; Erebot 0.5.1snapshot569 documentation</title>
+    <title>Prerequisites &mdash; Erebot 0.5.1snapshot570 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.5.1snapshot569',
+        VERSION:     '0.5.1snapshot570',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Erebot 0.5.1snapshot569 documentation"
+          title="Search within Erebot 0.5.1snapshot570 documentation"
           href="_static/opensearch.xml"/>
-    <link rel="top" title="Erebot 0.5.1snapshot569 documentation" href="index.html" />
+    <link rel="top" title="Erebot 0.5.1snapshot570 documentation" href="index.html" />
     <link rel="next" title="Installation" href="Installation.html" />
     <link rel="prev" title="Welcome to Erebot’s documentation!" href="index.html" /> 
   </head>
@@ -41,7 +41,7 @@
         <li class="right" >
           <a href="index.html" title="Welcome to Erebot’s documentation!"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Erebot 0.5.1snapshot569 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Erebot 0.5.1snapshot570 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -140,12 +140,12 @@ URI scheme).</p>
 <table border="1" class="docutils">
 <caption>System dependencies for Erebot</caption>
 <colgroup>
-<col width="13%" />
-<col width="30%" />
+<col width="12%" />
+<col width="32%" />
 <col width="9%" />
 <col width="9%" />
 <col width="9%" />
-<col width="30%" />
+<col width="29%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Dependency</th>
@@ -157,7 +157,20 @@ URI scheme).</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>gettext</td>
+<tr class="row-even"><td>doxygen</td>
+<td><a class="reference external" href="apt:doxygen">Debian/Ubuntu</a></td>
+<td>yes</td>
+<td>yes</td>
+<td>&nbsp;</td>
+<td>doxygen is needed if you plan to
+generate the documentation from
+Erebot&#8217;s&#8216; source files.
+We recommend version 1.7.2 or
+later as Erebot makes heavy use
+of PHP type-hinting and doxygen
+did not support that until 1.7.2.</td>
+</tr>
+<tr class="row-odd"><td>gettext</td>
 <td><a class="reference external" href="apt:gettext">Debian/Ubuntu</a></td>
 <td>yes</td>
 <td>yes</td>
@@ -170,18 +183,16 @@ marked for translation.
 same as the PHP <tt class="docutils literal"><span class="pre">gettext</span></tt>
 extension.</td>
 </tr>
-<tr class="row-odd"><td>doxygen</td>
-<td><a class="reference external" href="apt:doxygen">Debian/Ubuntu</a></td>
-<td>yes</td>
+<tr class="row-even"><td>xmlstarlet</td>
+<td><a class="reference external" href="apt:xmlstarlet">Debian/Ubuntu</a></td>
+<td>&nbsp;</td>
 <td>yes</td>
 <td>&nbsp;</td>
-<td>doxygen is needed if you plan to
-generate the documentation from
-Erebot&#8217;s&#8216; source files.
-We recommend version 1.7.2 or
-later as Erebot makes heavy use
-of PHP type-hinting and doxygen
-did not support that until 1.7.2.</td>
+<td>xmlstarlet is a <abbr title="Command-Line Interface">CLI</abbr> tool that
+simplifies XML files editing.
+We use it during packaging to set
+various settings in the
+<tt class="file docutils literal"><span class="pre">package.xml</span></tt> file.</td>
 </tr>
 </tbody>
 </table>
@@ -506,8 +517,9 @@ extensions.</td>
 <table class="docutils footnote" frame="void" id="id10" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>Only needed if you want to connect to IRC servers using a secure
-(encrypted) connection.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>Needed if you want to connect to IRC servers using a secure
+(encrypted) connection. Required when running Erebot from a PHAR archive
+(used to check the archive&#8217;s origin and integrity).</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id11" rules="none">
@@ -593,9 +605,8 @@ available for each dependency.</p>
 <td>yes</td>
 <td>yes</td>
 <td>&nbsp;</td>
-<td>phing (PHing Is Not GNU make) is
-a PHP project build system/tool
-based on <a class="reference external" href="http://ant.apache.org/">Apache Ant</a>.
+<td><abbr title="PHing Is Not GNU make">phing</abbr> is a PHP project build
+tool based on <a class="reference external" href="http://ant.apache.org/">Apache Ant</a>.
 It is heavily used by Erebot
 which provides phing targets for
 most operations you may use.</td>
@@ -616,10 +627,10 @@ bot in the background, etc.).</td>
 <td>&nbsp;</td>
 <td>yes</td>
 <td>Erebot uses this PEAR package to
-handle internationalization. It
-can be used to parse <a class="reference external" href="http://www.gnu.org/s/gettext/">gettext</a>
-translation catalogs, like the
-ones provided with Erebot.</td>
+handle <abbr title="internationalization">i18n</abbr>. It can be used to
+parse <a class="reference external" href="http://www.gnu.org/s/gettext/">gettext</a> translation
+catalogs, like the ones provided
+with Erebot.</td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="http://pear.php.net/PHP_CodeSniffer">pear.php.net/PHP_CodeSniffer</a></td>
 <td>yes <a class="footnote-reference" href="#id24" id="id19">[10]</a></td>
@@ -765,7 +776,7 @@ which should <strong>ALWAYS</strong> be called before submitting a patch.</td></
         <li class="right" >
           <a href="index.html" title="Welcome to Erebot’s documentation!"
              >previous</a> |</li>
-        <li><a href="index.html">Erebot 0.5.1snapshot569 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Erebot 0.5.1snapshot570 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

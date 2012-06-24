@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Erebot’s configuration &mdash; Erebot 0.5.1snapshot569 documentation</title>
+    <title>Erebot’s configuration &mdash; Erebot 0.5.1snapshot570 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.5.1snapshot569',
+        VERSION:     '0.5.1snapshot570',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Erebot 0.5.1snapshot569 documentation"
+          title="Search within Erebot 0.5.1snapshot570 documentation"
           href="_static/opensearch.xml"/>
-    <link rel="top" title="Erebot 0.5.1snapshot569 documentation" href="index.html" />
+    <link rel="top" title="Erebot 0.5.1snapshot570 documentation" href="index.html" />
     <link rel="next" title="Compatible modules" href="Modules.html" />
     <link rel="prev" title="Installation" href="Installation.html" /> 
   </head>
@@ -41,7 +41,7 @@
         <li class="right" >
           <a href="Installation.html" title="Installation"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Erebot 0.5.1snapshot569 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Erebot 0.5.1snapshot570 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -53,7 +53,7 @@
   <blockquote>
 <div></div></blockquote>
 <div class="section" id="erebot-s-configuration">
-<h1><a class="toc-backref" href="#id2">Erebot&#8217;s configuration</a><a class="headerlink" href="#erebot-s-configuration" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id3">Erebot&#8217;s configuration</a><a class="headerlink" href="#erebot-s-configuration" title="Permalink to this headline">¶</a></h1>
 <p>Erebot&#8217;s configuration is stored in an XML file. This file is usually
 called &#8220;<tt class="docutils literal"><span class="pre">Erebot.xml</span></tt>&#8221;, though you could name it otherwise and use
 the <em class="xref std std-option">Erebot -c</em> option when running Erebot to point it to your file.</p>
@@ -81,24 +81,24 @@ configuration file.</p>
 <div class="contents topic" id="contents">
 <p class="topic-title first">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#erebot-s-configuration" id="id2">Erebot&#8217;s configuration</a><ul>
-<li><a class="reference internal" href="#configuration" id="id3">&lt;configuration&gt;</a><ul>
-<li><a class="reference internal" href="#logging" id="id4">&lt;logging&gt;</a></li>
-<li><a class="reference internal" href="#modules" id="id5">&lt;modules&gt;</a><ul>
-<li><a class="reference internal" href="#module" id="id6">&lt;module&gt;</a><ul>
-<li><a class="reference internal" href="#param" id="id7">&lt;param&gt;</a></li>
+<li><a class="reference internal" href="#erebot-s-configuration" id="id3">Erebot&#8217;s configuration</a><ul>
+<li><a class="reference internal" href="#configuration" id="id4">&lt;configuration&gt;</a><ul>
+<li><a class="reference internal" href="#logging" id="id5">&lt;logging&gt;</a></li>
+<li><a class="reference internal" href="#modules" id="id6">&lt;modules&gt;</a><ul>
+<li><a class="reference internal" href="#module" id="id7">&lt;module&gt;</a><ul>
+<li><a class="reference internal" href="#param" id="id8">&lt;param&gt;</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#networks" id="id8">&lt;networks&gt;</a><ul>
-<li><a class="reference internal" href="#network" id="id9">&lt;network&gt;</a><ul>
-<li><a class="reference internal" href="#servers" id="id10">&lt;servers&gt;</a><ul>
-<li><a class="reference internal" href="#server" id="id11">&lt;server&gt;</a></li>
+<li><a class="reference internal" href="#networks" id="id9">&lt;networks&gt;</a><ul>
+<li><a class="reference internal" href="#network" id="id10">&lt;network&gt;</a><ul>
+<li><a class="reference internal" href="#servers" id="id11">&lt;servers&gt;</a><ul>
+<li><a class="reference internal" href="#server" id="id12">&lt;server&gt;</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#channels" id="id12">&lt;channels&gt;</a><ul>
-<li><a class="reference internal" href="#channel" id="id13">&lt;channel&gt;</a></li>
+<li><a class="reference internal" href="#channels" id="id13">&lt;channels&gt;</a><ul>
+<li><a class="reference internal" href="#channel" id="id14">&lt;channel&gt;</a></li>
 </ul>
 </li>
 </ul>
@@ -121,7 +121,7 @@ You still need to maintain the hierarchy however. Therefore, a
 of a <a class="reference internal" href="#network">&lt;network&gt;</a> tag.</p>
 </div>
 <div class="section" id="configuration">
-<h2><a class="toc-backref" href="#id3">&lt;configuration&gt;</a><a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">&lt;configuration&gt;</a><a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="#configuration">&lt;configuration&gt;</a> tag deals with settings related to the machine
 Erebot is running on more than to IRC itself.</p>
 <p>The following table lists attributes of this tag with their role.</p>
@@ -181,9 +181,8 @@ usual Linux format for locales
 <tr class="row-odd"><td>timezone</td>
 <td>n/a</td>
 <td><strong>Yes</strong></td>
-<td>A string describing the
-computer&#8217;s current timezone, such
-as <tt class="docutils literal"><span class="pre">Europe/Paris</span></tt>. [#]</td>
+<td>This computer&#8217;s current timezone,
+eg. <tt class="docutils literal"><span class="pre">Europe/Paris</span></tt>. <a class="footnote-reference" href="#id2" id="id1">[1]</a></td>
 </tr>
 <tr class="row-even"><td>user</td>
 <td>n/a</td>
@@ -203,10 +202,10 @@ configuration file.</td>
 </tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id1" rules="none">
+<table class="docutils footnote" frame="void" id="id2" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[1]</td><td>The list of supported timezones can be found on
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>The list of supported timezones can be found on
 <a class="reference external" href="http://php.net/manual/en/timezones.php">http://php.net/manual/en/timezones.php</a></td></tr>
 </tbody>
 </table>
@@ -217,22 +216,25 @@ can be overriden from the command-line. The values given here only act
 as default ones in case the command line does not override them.</p>
 </div>
 <div class="section" id="logging">
-<h3><a class="toc-backref" href="#id4">&lt;logging&gt;</a><a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id5">&lt;logging&gt;</a><a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h3>
 <p>The logging system used by Erebot is highly customizable. It uses the same
 kind of API as the Python logging module as it is actually a port of that module
-for PHP, hence its name (Python Logging On PHP, or &#8220;PLOP&#8221;).</p>
+for PHP, hence its name <abbr title="Python Logging On PHP">PLOP</abbr>.</p>
 <p>It was developped as a subproject of Erebot and ships with its own
-documentation. The syntax for PLOP&#8217;s configuration is described in details
-&#64;TODO.</p>
+documentation.</p>
+<div class="admonition-todo admonition " id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Either describe PLOP&#8217;s configuration here or add a link to the proper doc.</p>
+</div>
 </div>
 <div class="section" id="modules">
-<h3><a class="toc-backref" href="#id5">&lt;modules&gt;</a><a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">&lt;modules&gt;</a><a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h3>
 <p>Each of the <a class="reference internal" href="#configuration">&lt;configuration&gt;</a>, <a class="reference internal" href="#network">&lt;network&gt;</a>, <a class="reference internal" href="#server">&lt;server&gt;</a> and
 <a class="reference internal" href="#channel">&lt;channel&gt;</a> tags may have a <a class="reference internal" href="#modules">&lt;modules&gt;</a> subtag to specify which modules
 should be made available at that level.</p>
 <p>This tag is a simple container for zero or more <a class="reference internal" href="#module">&lt;module&gt;</a> tags.</p>
 <div class="section" id="module">
-<h4><a class="toc-backref" href="#id6">&lt;module&gt;</a><a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id7">&lt;module&gt;</a><a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h4>
 <p>This tag defines a module that will be available at the current level
 (ie. either globally or for the current network/server/channel).</p>
 <p>Settings for a module at one level will override settings for the same module
@@ -274,7 +276,7 @@ disabled (<tt class="docutils literal"><span class="pre">False</span></tt>).</td
 additional parameters the module should take into account (such as
 specific settings).</p>
 <div class="section" id="param">
-<h5><a class="toc-backref" href="#id7">&lt;param&gt;</a><a class="headerlink" href="#param" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id8">&lt;param&gt;</a><a class="headerlink" href="#param" title="Permalink to this headline">¶</a></h5>
 <p>This tag can be used to define a parameter for a module. It has 2 (two)
 mandatory attributes, as described in the table below.</p>
 <table border="1" class="docutils">
@@ -311,10 +313,10 @@ information.</td>
 </div>
 </div>
 <div class="section" id="networks">
-<h3><a class="toc-backref" href="#id8">&lt;networks&gt;</a><a class="headerlink" href="#networks" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id9">&lt;networks&gt;</a><a class="headerlink" href="#networks" title="Permalink to this headline">¶</a></h3>
 <p>This tag is a simple container for zero or more <a class="reference internal" href="#network">&lt;network&gt;</a>.</p>
 <div class="section" id="network">
-<h4><a class="toc-backref" href="#id9">&lt;network&gt;</a><a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id10">&lt;network&gt;</a><a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h4>
 <p>This tag represents an IRC network.
 The following table lists attributes of this tag with their role.</p>
 <table border="1" class="docutils">
@@ -344,10 +346,10 @@ for this IRC server.</p>
 <p>It may also contain a <a class="reference internal" href="#channels">&lt;channels&gt;</a> subtag to change the settings of a module
 for some IRC channels on this network.</p>
 <div class="section" id="servers">
-<h5><a class="toc-backref" href="#id10">&lt;servers&gt;</a><a class="headerlink" href="#servers" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id11">&lt;servers&gt;</a><a class="headerlink" href="#servers" title="Permalink to this headline">¶</a></h5>
 <p>This tag is a simple container for <strong>one</strong> or more <a class="reference internal" href="#server">&lt;server&gt;</a>.</p>
 <div class="section" id="server">
-<h6><a class="toc-backref" href="#id11">&lt;server&gt;</a><a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h6>
+<h6><a class="toc-backref" href="#id12">&lt;server&gt;</a><a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h6>
 <p>This tag represents the configuration of an IRC server.
 The following table lists attributes of this tag with their role.</p>
 <table border="1" class="docutils">
@@ -444,15 +446,20 @@ separated by spaces:</p>
 <span class="nt">&lt;server</span> <span class="na">url=</span><span class="s">&quot;http://http-proxy.example.com:8080/ socks://socks-proxy.example.com/ irc://irc.example.com&quot;</span><span class="nt">/&gt;</span>
 </pre></div>
 </div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">As of this writing, Erebot does not support older versions of the SOCKS
+protocol (namely, SOCKSv4 and its derivatives).</p>
+</div>
 <p>This tag may contain a <a class="reference internal" href="#modules">&lt;modules&gt;</a> subtag to change the settings of a module
 for this IRC server.</p>
 </div>
 </div>
 <div class="section" id="channels">
-<h5><a class="toc-backref" href="#id12">&lt;channels&gt;</a><a class="headerlink" href="#channels" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id13">&lt;channels&gt;</a><a class="headerlink" href="#channels" title="Permalink to this headline">¶</a></h5>
 <p>This tag is a simple container for zero or more <a class="reference internal" href="#channel">&lt;channel&gt;</a> tags.</p>
 <div class="section" id="channel">
-<h6><a class="toc-backref" href="#id13">&lt;channel&gt;</a><a class="headerlink" href="#channel" title="Permalink to this headline">¶</a></h6>
+<h6><a class="toc-backref" href="#id14">&lt;channel&gt;</a><a class="headerlink" href="#channel" title="Permalink to this headline">¶</a></h6>
 <p>This tag represents the configuration of an IRC channel.
 The following table lists attributes of this tag with their role.</p>
 <table border="1" class="docutils">
@@ -555,7 +562,7 @@ for this IRC channel.</p>
         <li class="right" >
           <a href="Installation.html" title="Installation"
              >previous</a> |</li>
-        <li><a href="index.html">Erebot 0.5.1snapshot569 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Erebot 0.5.1snapshot570 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
